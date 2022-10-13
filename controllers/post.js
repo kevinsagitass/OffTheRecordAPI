@@ -1,5 +1,12 @@
 import { getPostTopPicks, getPostsByOffsetandGenre } from "../models/post.js";
+import fs from "fs";
  
+export const test = (req, res) => {
+    const contents = fs.readFileSync('D:/download.jpg', {encoding: 'base64'});
+
+    res.json(contents);
+}
+
 // Get All Posts
 export const showPosts = (req, res) => {
     let data = req.body;
